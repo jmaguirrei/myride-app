@@ -1,0 +1,22 @@
+{
+  "name": "myride-app",
+  "version": "0.0.1",
+  "author": "José Manuel Aguirre",
+  "license": "MIT",
+  "scripts": {
+    "git-i1": "git add .",
+    "git-i2": "git diff-index --quiet HEAD || git commit -m 'Initial commit'",
+    "git-i3": "git push",
+    "git": "npm run git-i1 && npm run git-i2 && npm run git-i3",
+    "start-dev": "nodemon --ignore 'client/' start.js",
+    "start-prod": "NODE_ENV=production node start.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0"
+  }
+}
