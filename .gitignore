@@ -1,13 +1,6 @@
-
-.babelrc
-.cache/*
+node_modules/*
 .DS_Store
 .eslintignore
 .eslintrc
-dist
-env.json
-secrets.json
-node_modules/*
+.gitignore
 package-lock.json
-start-dev.js
-
