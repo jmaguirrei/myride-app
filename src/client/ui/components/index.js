@@ -1,1 +1,1 @@
-// Root Componentsexport { default as MenuIcon } from '@root/lib/components/MenuIcon';// export { default as Icons } from '@root/lib/components/Icons';// Independent Componentsexport { default as GoogleMaps } from './GoogleMaps';
+// Root Componentsexport { default as MenuIcon } from '@root/lib/components/MenuIcon';// export { default as Icons } from '@root/lib/components/Icons';// Independent Componentsexport { default as GoogleMaps } from './GoogleMaps';export { default as MapMarker } from './MapMarker';

@@ -1,12 +1,17 @@
 
 
 export default (client, id) => {
-
-  const initialLatLon = { lat: -33.4, lng: -70.5 };
-
   return client.hoc({
 
     id,
+
+    actions(props, store) {
+      return {
+        onclick: () => {
+        },
+      };
+    },
+
 
     mounted(props, store) {
 
@@ -15,27 +20,10 @@ export default (client, id) => {
         store.values.mapObject = new window.google.maps.Map(mapWrapper, {
           center: initialLatLon,
           zoom: 16,
-          disableDefaultUI: true,
-          clickableIcons: false,
-          styles: [
-            {
-              featureType: 'poi.business',
-              stylers: [ { visibility: 'off' } ],
-            },
-            {
-              featureType: 'transit',
-              elementType: 'labels.icon',
-              stylers: [ { visibility: 'off' } ],
-            },
-          ],
+          disableDefaultUI: true
         });
-
         window.navigator.geolocation.getCurrentPosition(position => {
           const { latitude, longitude } = position.coords;
-          store.set({
-            'currentDevicePosition.lat': latitude,
-            'currentDevicePosition.lng': longitude,
-          });
           store.values.mapObject.setCenter({ lat: latitude, lng: longitude });
         });
       };
@@ -51,10 +39,10 @@ export default (client, id) => {
       `,
     },
 
-    render({ classes, actions }) {
+    render({ props, classes, actions }) {
 
       return (
-        <div id='map-wrapper' class={classes('map')} data-skip-morph>
+        <div id='map-wrapper' class={classes('map')} onclick={actions.onclick}>
         </div>
       );
     }
