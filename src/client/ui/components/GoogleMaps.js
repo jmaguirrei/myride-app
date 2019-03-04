@@ -45,7 +45,7 @@ export default (client, id) => {
     render({ props, classes, actions }) {
 
       return (
-        <div id='map-wrapper' class={classes.map} onclick={actions.onclick}>
+        <div id='map-wrapper' class={classes('map')} onclick={actions.onclick}>
         </div>
       );
     }
